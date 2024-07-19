@@ -8,4 +8,6 @@ const range = (start, end) => {
     return array;
 }
 
-console.log(range(3,11));
+const sum = array => array.reduce((total, currentValue) => total += currentValue, 0);
+
+console.log(sum(range(1,10)));
