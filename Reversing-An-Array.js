@@ -6,4 +6,8 @@ const reverseArray = array => {
     return reversedArray;
 }
 
-console.log(reverseArray([1,2,3,4]));
+const reverseArrayInPlace = array => array.sort((a, b) => b - a);
+
+// console.log(reverseArray([1,2,3,4]));
+
+console.log(reverseArrayInPlace([1,2,3,4]));
