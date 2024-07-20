@@ -20,3 +20,8 @@ const listToArray = list => {
 }
 
 console.log(listToArray(x));
+
+const prepend = (el, list) => list = {value: el, rest:list};
+
+const y = prepend(23, x)
+console.log(JSON.stringify(y));
