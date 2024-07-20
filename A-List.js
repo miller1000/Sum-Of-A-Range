@@ -6,8 +6,6 @@ const arrayToList = array => {
     return list;
 }
 
-const x = arrayToList([1, 2, 3]);
-console.log(JSON.stringify(x));
 
 const listToArray = list => {
     let array = [];
@@ -19,9 +17,32 @@ const listToArray = list => {
     return array;
 }
 
-console.log(listToArray(x));
 
 const prepend = (el, list) => list = {value: el, rest:list};
 
-const y = prepend(23, x)
-console.log(JSON.stringify(y));
+
+const nth = (list, num) => {
+    let element = list;
+    for (i = 0; i < num -1; i++) {
+        if (element.rest) {
+            element = element.rest;
+        } else {
+            element = undefined;
+            break;
+        }
+    }
+    return element;
+}
+
+
+const nth2 = (list, num) => {
+    let element = list;
+    if (!element.rest) {
+        return undefined;
+    }
+    if (num === 1) {
+        return element;
+    } else {
+        return nth2(element.rest, num - 1);
+    }
+}
