@@ -6,4 +6,17 @@ const arrayToList = array => {
     return list;
 }
 
-console.log(JSON.stringify(arrayToList([1,2,3])));
+const x = arrayToList([1, 2, 3]);
+console.log(JSON.stringify(x));
+
+const listToArray = list => {
+    let array = [];
+    let element = list;
+    while (element !== null) {
+        array.push(element.value);
+        element = element.rest;
+    }
+    return array;
+}
+
+console.log(listToArray(x));
